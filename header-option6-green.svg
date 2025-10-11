@@ -1,0 +1,208 @@
+<svg fill="none" viewBox="0 0 1200 300" width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Green Theme Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1a0f" />
+      <stop offset="50%" stop-color="#0c2a18" />
+      <stop offset="100%" stop-color="#0a1a0f" />
+    </linearGradient>
+
+    <!-- Fluorescent Green Glow -->
+    <linearGradient id="hologlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff9d" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#00e676" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#69f0ae" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Scanline Pattern -->
+    <pattern id="scanPattern" width="4" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-5)">
+      <rect width="4" height="1" fill="rgba(100, 255, 180, 0.1)">
+        <animate attributeName="height" values="1;2;1" dur="3s" repeatCount="indefinite" />
+      </rect>
+    </pattern>
+
+    <!-- Glitch Effect -->
+    <filter id="glitch" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -10" result="glow" />
+      <feComposite in="SourceGraphic" in2="glow" operator="over" result="composite" />
+    </filter>
+
+    <!-- Animated Grid -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 255, 150, 0.08)" stroke-width="0.3">
+        <animate attributeName="stroke-dashoffset" from="0" to="80" dur="3s" repeatCount="indefinite" />
+      </path>
+    </pattern>
+
+    <!-- Floating Particles -->
+    <g id="particles">
+      <circle cx="0" cy="0" r="1.2" fill="#00ff9d">
+        <animateMotion path="M 0 0 Q 30 -20 60 0 T 120 0" dur="20s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0.7;0" dur="10s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1;1.5;1" dur="5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="0" cy="0" r="0.8" fill="#69f0ae">
+        <animateMotion path="M 0 0 Q -20 -15 -40 0 T -80 0" dur="15s" begin="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0.5;0" dur="8s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Subtle Noise Texture -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 0.03 0" />
+    </filter>
+
+    <!-- Mask for integrated border -->
+    <mask id="borderMask">
+      <rect x="0" y="0" width="1200" height="300" fill="white" />
+      <!-- Cut out area where capsule integrates -->
+      <rect x="208" y="225" width="784" height="48" fill="black" />
+    </mask>
+
+    <!-- Clip path for card boundaries -->
+    <clipPath id="cardClip">
+      <rect x="100" y="50" width="1000" height="200" rx="15" />
+    </clipPath>
+  </defs>
+
+  <!-- Background with Effects -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)" />
+  <rect width="100%" height="100%" fill="url(#grid)" opacity="0.2" />
+  <rect width="100%" height="100%" fill="url(#scanPattern)" opacity="0.1" />
+  <rect width="100%" height="100%" fill="#000" opacity="0.03" filter="url(#noise)" />
+
+  <!-- Main Container -->
+  <g filter="url(#glitch)">
+    <!-- Outer Border with Glow -->
+    <rect x="90" y="40" width="1020" height="220" rx="20" fill="none" stroke="url(#hologlow)" stroke-width="1.5" stroke-opacity="0.3" mask="url(#borderMask)" />
+    
+    <!-- Main Card Background -->
+    <rect x="100" y="50" width="1000" height="200" rx="15" fill="rgba(15, 42, 30, 0.7)" />
+    
+    <!-- Main Card Border with Mask -->
+    <rect x="100" y="50" width="1000" height="200" rx="15" fill="none" stroke="url(#hologlow)" stroke-width="1" mask="url(#borderMask)" />
+    
+    <!-- Inner Glow -->
+    <rect x="110" y="60" width="980" height="180" rx="10" fill="none" stroke="url(#hologlow)" stroke-width="0.8" stroke-dasharray="5,5" opacity="0.7" mask="url(#borderMask)">
+      <animate attributeName="stroke-dashoffset" values="0;20;0" dur="15s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- Shooting Star Effects -->
+  <g clip-path="url(#cardClip)">
+    <!-- Star 1 -->
+    <line x1="250" y1="70" x2="280" y2="80" stroke="#69f0ae" stroke-width="0.7" opacity="0" stroke-linecap="round">
+      <animate attributeName="x1" values="250;480" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="y1" values="70;150" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="280;510" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="80;160" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.25;0.25;0" keyTimes="0;0.3;0.7;1" dur="5s" repeatCount="indefinite" />
+    </line>
+    
+    <!-- Star 2 -->
+    <line x1="650" y1="90" x2="675" y2="98" stroke="#69f0ae" stroke-width="0.6" opacity="0" stroke-linecap="round">
+      <animate attributeName="x1" values="650;820" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="y1" values="90;145" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="675;845" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="98;153" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.22;0.22;0" keyTimes="0;0.35;0.75;1" dur="6s" begin="4s" repeatCount="indefinite" />
+    </line>
+    
+    <!-- Star 3 -->
+    <line x1="900" y1="65" x2="922" y2="72" stroke="#69f0ae" stroke-width="0.65" opacity="0" stroke-linecap="round">
+      <animate attributeName="x1" values="900;1050" dur="5.5s" repeatCount="indefinite" />
+      <animate attributeName="y1" values="65;125" dur="5.5s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="922;1072" dur="5.5s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="72;132" dur="5.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.24;0.24;0" keyTimes="0;0.32;0.72;1" dur="5.5s" begin="8s" repeatCount="indefinite" />
+    </line>
+    
+    <!-- Star 4 -->
+    <line x1="400" y1="120" x2="420" y2="126" stroke="#69f0ae" stroke-width="0.5" opacity="0" stroke-linecap="round">
+      <animate attributeName="x1" values="400;540" dur="6.5s" repeatCount="indefinite" />
+      <animate attributeName="y1" values="120;175" dur="6.5s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="420;560" dur="6.5s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="126;181" dur="6.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.2;0.2;0" keyTimes="0;0.33;0.73;1" dur="6.5s" begin="12s" repeatCount="indefinite" />
+    </line>
+  </g>
+
+  <!-- Floating Particles -->
+  <g opacity="0.8">
+    <use href="#particles" x="200" y="100" />
+    <use href="#particles" x="900" y="150" transform="scale(-1,1)" />
+  </g>
+
+  <!-- Main Content -->
+  <g font-family="'Segoe UI', system-ui, -apple-system, sans-serif" text-rendering="optimizeLegibility">
+    <!-- Title with Glitch Effect -->
+    <g filter="url(#glitch)">
+      <text x="600" y="140" font-size="56" font-weight="800" text-anchor="middle" fill="#ffffff" letter-spacing="2" style="paint-order: stroke; stroke: rgba(255,255,255,0.1); stroke-width: 2; stroke-linejoin: round;">
+        <tspan>NAVANEETH K</tspan>
+        <animate attributeName="filter" values="none;url(#glitch);none" dur="15s" repeatCount="indefinite" />
+      </text>
+    </g>
+
+    <!-- Subtitle with Scan Animation -->
+    <g>
+      <rect x="300" y="160" width="600" height="2" fill="url(#hologlow)" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="8s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="width" from="0" to="600" dur="1s" begin="1s" fill="freeze" />
+      </rect>
+
+      <text x="600" y="190" font-size="22" font-weight="400" text-anchor="middle" fill="#b3f0d1" letter-spacing="3" opacity="0.9">
+        Computational Neuroscience Researcher
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="10s" repeatCount="indefinite" />
+      </text>
+
+      <rect x="300" y="195" width="600" height="1" fill="url(#hologlow)" opacity="0.2" />
+    </g>
+
+    <!-- Tech Stack -->
+    <g transform="translate(0, 17)">
+      <defs>
+        <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgba(11, 43, 25, 0.7)" />
+          <stop offset="100%" stop-color="rgba(11, 43, 30, 0.9)" />
+        </linearGradient>
+      </defs>
+      <rect x="208" y="210" width="784" height="45" rx="22" fill="url(#techGradient)" stroke="url(#hologlow)" stroke-width="0.5" opacity="0.9">
+        <animate attributeName="opacity" values="0.8;0.9;0.8" dur="8s" repeatCount="indefinite" />
+      </rect>
+      <text x="600" y="239" font-size="16" font-weight="400" text-anchor="middle" fill="#a0f0c0" letter-spacing="2">
+        <tspan fill="#a0f0c0">BRAIN-COMPUTER INTERFACES</tspan>
+        <tspan dx="15" fill="url(#hologlow)" opacity="0.5">•</tspan>
+        <tspan dx="15" fill="#a0f0c0">NEUROTECH</tspan>
+        <tspan dx="15" fill="url(#hologlow)" opacity="0.5">•</tspan>
+        <tspan dx="15" fill="#a0f0c0">FULL STACK DEVELOPER</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Corner Accents -->
+  <g stroke="url(#hologlow)" stroke-width="2" fill="none" stroke-linecap="round">
+    <!-- Top Left -->
+    <path d="M110,70 L140,70 M110,75 L125,75" opacity="0.8">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" repeatCount="indefinite" />
+    </path>
+    <!-- Top Right -->
+    <path d="M1090,70 L1060,70 M1090,75 L1075,75" opacity="0.8">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" begin="1s" repeatCount="indefinite" />
+    </path>
+    <!-- Bottom Left -->
+    <path d="M110,230 L140,230 M110,225 L125,225" opacity="0.8">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" begin="2s" repeatCount="indefinite" />
+    </path>
+    <!-- Bottom Right -->
+    <path d="M1090,230 L1060,230 M1090,225 L1075,225" opacity="0.8">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" begin="3s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Animated Glow Effect -->
+  <rect x="90" y="40" width="1020" height="220" rx="20" fill="none" stroke="url(#hologlow)" stroke-width="0.5" opacity="0" mask="url(#borderMask)">
+    <animate attributeName="opacity" values="0;0.3;0" dur="8s" repeatCount="indefinite" />
+  </rect>
+</svg>
