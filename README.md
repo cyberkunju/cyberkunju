@@ -332,21 +332,6 @@ Audio DSP integration
 
 ---
 
-### 🔐 Cybersecurity & CTF
-
-<p align="center">
-  <img src="https://img.shields.io/badge/CTF_Competitor-FF0000?style=for-the-badge&logo=hackaday&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Penetration_Testing-00FF00?style=for-the-badge&logo=kalilinux&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Network_Security-0080FF?style=for-the-badge&logo=wireshark&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Cryptography-800080?style=for-the-badge&logo=letsencrypt&logoColor=white"/>
-</p>
-
-<div align="center">
-  <i>Active participant in Capture The Flag competitions | Security researcher | Automation enthusiast</i>
-</div>
-
----
-
 ### 📫 Connect With Me
 
 <p align="center">
