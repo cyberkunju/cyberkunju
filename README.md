@@ -155,51 +155,6 @@ const navaneeth = {
 
 ---
 
-### 📊 GitHub Analytics
-
-<div align="center">
-  <img height="170em" src="https://github-readme-stats.vercel.app/api?username=cyberkunju&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF"/>
-  <img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cyberkunju&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=FFFFFF&langs_count=8"/>
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=cyberkunju&theme=tokyonight&hide_border=true&background=0D1117&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF" alt="GitHub Streak" />
-</div>
-
----
-
-### 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=cyberkunju&theme=tokyonight&no-frame=true&no-bg=true&row=1&column=6&margin-w=10" alt="Trophies" />
-</div>
-
----
-
-### 🐍 Contribution Snake Animation
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/cyberkunju/cyberkunju/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/cyberkunju/cyberkunju/output/github-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/cyberkunju/cyberkunju/output/github-snake.svg" />
-</picture>
-
----
-
-### 🚀 Featured Projects
-
-<div align="center">
-  <a href="https://github.com/cyberkunju/Loan-Default-Prediction">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cyberkunju&repo=Loan-Default-Prediction&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF" />
-  </a>
-  <a href="https://github.com/cyberkunju/WayPoint">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cyberkunju&repo=WayPoint&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF" />
-  </a>
-</div>
-
----
 
 ### 🧬 BCI Research Deep Dive
 
